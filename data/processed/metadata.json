@@ -1,7 +1,7 @@
 {
-  "total_examples": 41,
-  "train_examples": 32,
-  "val_examples": 4,
+  "total_examples": 50,
+  "train_examples": 40,
+  "val_examples": 5,
   "test_examples": 5,
   "categories": [
     "one_on_one",

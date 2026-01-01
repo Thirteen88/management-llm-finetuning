@@ -51,6 +51,9 @@ class TrainingConfig:
     load_in_4bit: bool = True
     use_flash_attention: bool = True
 
+    # Additional fields from YAML (not in dataclass, handled separately)
+    yaml_config: dict = None
+
     # LoRA
     lora_r: int = 16
     lora_alpha: int = 32
@@ -133,14 +136,25 @@ def load_model_and_tokenizer(config: TrainingConfig):
         bnb_config = None
         load_in_8bit = False
 
-    # Load model
+    # Load model - handle flash attention parameter conditionally
+    model_kwargs = {
+        "quantization_config": bnb_config,
+        "load_in_8bit": load_in_8bit,
+        "device_map": "auto",
+        "trust_remote_code": True,
+    }
+
+    # Only add flash attention if config specifies and it's supported
+    if config.use_flash_attention:
+        try:
+            model_kwargs["use_flash_attention_2"] = True
+        except TypeError:
+            # Flash attention not supported for this model
+            pass
+
     model = AutoModelForCausalLM.from_pretrained(
         config.model_name,
-        quantization_config=bnb_config,
-        load_in_8bit=load_in_8bit,
-        device_map="auto",
-        trust_remote_code=True,
-        use_flash_attention_2=config.use_flash_attention,
+        **model_kwargs
     )
 
     model.config.use_cache = False  # Disable for training
@@ -213,16 +227,20 @@ def preprocess_function(examples, tokenizer, max_length):
         max_length: Maximum sequence length
 
     Returns:
-        Tokenized examples
+        Tokenized examples with labels
     """
     # Tokenize the text
     tokenized = tokenizer(
         examples["text"],
         truncation=True,
         max_length=max_length,
-        padding=False,  # Dynamic padding
+        padding="max_length",  # Pad to max_length for consistency
         return_tensors=None,
     )
+
+    # For causal language modeling, labels are the same as input_ids
+    # We need to copy the list properly
+    tokenized["labels"] = tokenized["input_ids"].copy()
 
     return tokenized
 
@@ -246,14 +264,58 @@ def main():
 
     # Load config
     config_dict = load_config(args.config)
-    config = TrainingConfig(**{
-        **config_dict.get("model", {}),
-        **config_dict.get("lora", {}),
-        **config_dict.get("training", {}),
-        **config_dict.get("data", {}),
-        **config_dict.get("output", {}),
-        **config_dict.get("hardware", {}),
-    })
+
+    # Map YAML sections to TrainingConfig fields
+    def map_config(config_dict: dict) -> dict:
+        """Map YAML config to TrainingConfig fields."""
+        mapped = {}
+
+        # Model section
+        model = config_dict.get("model", {})
+        mapped["model_name"] = model.get("name", "mistralai/Mistral-7B-Instruct-v0.2")
+        mapped["load_in_4bit"] = model.get("load_in_4bit", True)
+        mapped["use_flash_attention"] = model.get("use_flash_attention", True)
+
+        # LoRA section
+        lora = config_dict.get("lora", {})
+        mapped["lora_r"] = lora.get("r", 16)
+        mapped["lora_alpha"] = lora.get("lora_alpha", 32)
+        mapped["lora_dropout"] = lora.get("lora_dropout", 0.05)
+        mapped["target_modules"] = lora.get("target_modules", ["q_proj", "k_proj", "v_proj", "o_proj"])
+
+        # Training section
+        training = config_dict.get("training", {})
+        mapped["num_train_epochs"] = training.get("num_train_epochs", 3)
+        mapped["per_device_train_batch_size"] = training.get("per_device_train_batch_size", 4)
+        mapped["per_device_eval_batch_size"] = training.get("per_device_eval_batch_size", 8)
+        mapped["gradient_accumulation_steps"] = training.get("gradient_accumulation_steps", 4)
+        mapped["learning_rate"] = training.get("learning_rate", 2e-4)
+        mapped["warmup_ratio"] = training.get("warmup_ratio", 0.03)
+        mapped["weight_decay"] = training.get("weight_decay", 0.001)
+        mapped["max_grad_norm"] = training.get("max_grad_norm", 1.0)
+
+        # Data section
+        data = config_dict.get("data", {})
+        mapped["train_path"] = data.get("train_path", "data/processed/train.parquet")
+        mapped["validation_path"] = data.get("validation_path", "data/processed/validation.parquet")
+        mapped["max_seq_length"] = data.get("max_seq_length", 2048)
+
+        # Output section
+        output = config_dict.get("output", {})
+        mapped["output_dir"] = output.get("output_dir", "models/checkpoints")
+        mapped["logging_steps"] = output.get("logging_steps", 10)
+        mapped["save_steps"] = output.get("save_steps", 100)
+        mapped["eval_steps"] = output.get("eval_steps", 100)
+        mapped["save_total_limit"] = output.get("save_total_limit", 3)
+
+        # Hardware section
+        hardware = config_dict.get("hardware", {})
+        mapped["bf16"] = hardware.get("bf16", True)
+        mapped["fp16"] = hardware.get("fp16", False)
+
+        return mapped
+
+    config = TrainingConfig(**map_config(config_dict))
 
     if args.output_dir:
         config.output_dir = args.output_dir
@@ -312,12 +374,12 @@ def main():
         eval_steps=config.eval_steps,
         save_total_limit=config.save_total_limit,
         save_strategy="steps",
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         bf16=config.bf16,
         fp16=config.fp16,
-        optim="paged_adamw_32bit",
+        optim="adamw_torch",
         lr_scheduler_type="cosine",
-        report_to=["tensorboard"],
+        report_to=["none"],
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         greater_is_better=False,

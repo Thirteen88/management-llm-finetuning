@@ -41,11 +41,22 @@ models/*.bin
 models/*.safetensors
 outputs/
 
-# Data files (only track processed metadata, not raw data)
-data/raw/*.json
-data/raw/*.jsonl
+# Data files (track sample data, ignore user's real data)
+# Sample data files are tracked:
+!data/raw/conversations.json
+!data/raw/performance_reviews.jsonl
+!data/raw/hiring_decisions.jsonl
+!data/raw/strategy_planning.jsonl
+
+# Ignore all other raw data (user's private data)
+data/raw/*
+data/raw/*/*
+
+# Ignore processed parquet files (generated)
 data/processed/*.parquet
-data/synthetic/*.json
+
+# Track metadata
+!data/processed/metadata.json
 
 # Logs
 logs/

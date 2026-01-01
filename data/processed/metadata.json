@@ -1,8 +1,8 @@
 {
-  "total_examples": 10,
-  "train_examples": 8,
-  "val_examples": 1,
-  "test_examples": 1,
+  "total_examples": 16,
+  "train_examples": 12,
+  "val_examples": 2,
+  "test_examples": 2,
   "categories": [
     "one_on_one",
     "performance_review",

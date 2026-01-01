@@ -1,0 +1,16 @@
+{
+  "total_examples": 10,
+  "train_examples": 8,
+  "val_examples": 1,
+  "test_examples": 1,
+  "categories": [
+    "one_on_one",
+    "performance_review",
+    "standup",
+    "strategy",
+    "hiring",
+    "crisis",
+    "stakeholder"
+  ],
+  "redacted": true
+}

@@ -1,0 +1,16 @@
+# Raw Data Directory
+
+Place your raw conversation data files in this directory.
+
+Supported formats:
+- JSON (.json) - Array of conversation objects
+- JSONL (.jsonl) - One JSON object per line
+
+Files in this directory should NOT be committed to git if they contain
+any real or sensitive data. Only synthetic or fully anonymized data
+should be tracked in version control.
+
+Example structure:
+- conversations.json
+- reviews.jsonl
+- synthetic_examples.json

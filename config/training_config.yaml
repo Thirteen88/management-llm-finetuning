@@ -1,0 +1,135 @@
+# Training Configuration for Manager & Director Model
+# Modify these values based on your hardware and requirements
+
+# ============================================================================
+# MODEL SETTINGS
+# ============================================================================
+model:
+  # Base model to fine-tune
+  name: "mistralai/Mistral-7B-Instruct-v0.2"
+  # Alternative models (uncomment to use):
+  # name: "meta-llama/Llama-2-7b-chat-hf"
+  # name: "HuggingFaceH4/zephyr-7b-beta"
+  # name: " NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO"
+
+  # Load in 4-bit for memory efficiency (recommended for <24GB VRAM)
+  load_in_4bit: true
+  load_in_8bit: false
+  use_flash_attention: true
+
+# ============================================================================
+# LORA / PEFT SETTINGS
+# ============================================================================
+lora:
+  enabled: true
+  r: 16          # LoRA rank (higher = more parameters, more VRAM)
+  lora_alpha: 32 # LoRA alpha scaling
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+
+# ============================================================================
+# TRAINING HYPERPARAMETERS
+# ============================================================================
+training:
+  # Number of training epochs
+  num_train_epochs: 3
+
+  # Batch size (per device)
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 8
+
+  # Gradient accumulation (effective batch = batch_size * grad_accum)
+  gradient_accumulation_steps: 4
+
+  # Learning rate
+  learning_rate: 2.0e-4
+  warmup_ratio: 0.03
+
+  # Optimizer settings
+  optim: "paged_adamw_32bit"
+  weight_decay: 0.001
+  max_grad_norm: 1.0
+
+  # Scheduler
+  lr_scheduler_type: "cosine"
+
+# ============================================================================
+# DATA SETTINGS
+# ============================================================================
+data:
+  # Path to training data
+  train_path: "data/processed/train.parquet"
+  validation_path: "data/processed/validation.parquet"
+  test_path: "data/processed/test.parquet"
+
+  # Data formatting
+  max_seq_length: 2048        # Maximum sequence length
+  preprocessing_num_workers: 4
+
+  # Prompt template
+  prompt_template: |
+    You are a {role_level}. Respond to the following situation:
+
+    Situation: {situation}
+    Context: {context}
+
+    Response:
+
+# ============================================================================
+# OUTPUT & LOGGING
+# ============================================================================
+output:
+  # Output directory for checkpoints
+  output_dir: "models/checkpoints"
+
+  # Logging
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 3
+
+  # Checkpointing
+  save_strategy: "steps"
+  evaluation_strategy: "steps"
+
+# ============================================================================
+# WANDB / EXPERIMENT TRACKING
+# ============================================================================
+wandb:
+  enabled: true
+  project: "manager-training-dataset"
+  entity: null  # Set to your wandb username/team
+  run_name: null  # Auto-generated if null
+
+# ============================================================================
+# HARDWARE SETTINGS
+# ============================================================================
+hardware:
+  # Device (cuda, mps, cpu)
+  device: "cuda"
+
+  # Mixed precision training
+  bf16: true    # Use BF16 if supported (A100, H100, RTX 40xx)
+  fp16: false   # Fallback to FP16
+
+  # Multi-GPU
+  fsdp: null    # Enable for multi-GPU training
+  deepspeed: null
+
+# ============================================================================
+# INFERENCE SETTINGS
+# ============================================================================
+inference:
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  max_new_tokens: 512
+  repetition_penalty: 1.1

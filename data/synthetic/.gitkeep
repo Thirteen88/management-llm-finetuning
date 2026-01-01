@@ -1,0 +1,8 @@
+# Synthetic Data Directory
+
+This directory contains synthetically generated or augmented data.
+
+Use this for:
+- LLM-generated examples (human-validated)
+- Data augmentation
+- Additional training examples

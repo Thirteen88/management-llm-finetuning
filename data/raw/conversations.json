@@ -883,6 +883,611 @@
           "tradeoffs"
         ]
       }
+    },
+    {
+      "id": "perf_review_meets_expectations_031",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 8,
+        "topic": "meets expectations annual review",
+        "participants": [
+          "manager",
+          "software_engineer"
+        ],
+        "tenure": "2 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "Thanks for meeting with me. I want to discuss your annual performance review. Your rating this year is 'Meets Expectations.' You're doing solid work and contributing to the team's success."
+        },
+        {
+          "role": "employee",
+          "text": "Thank you. Can you share what specifically led to this rating? I'd like to understand what I'm doing well and where I can improve."
+        },
+        {
+          "role": "manager",
+          "text": "Absolutely. Your strengths: You consistently deliver assigned features on time, your code quality is good with few bugs in production, and you're a reliable team member who participates well in rituals like standup and retrospectives. Areas for growth: I'd like to see you take more ownership beyond just assigned tasks - propose improvements, volunteer for stretch projects, and mentor newer team members. Your technical skills are solid, but to advance, you'll need to demonstrate more leadership and initiative."
+        },
+        {
+          "role": "employee",
+          "text": "That's helpful feedback. I've been focused on just getting my work done, but I see that I need to think more broadly about contributing to the team. What would you recommend I work on this coming year?"
+        },
+        {
+          "role": "manager",
+          "text": "Great question. Let's set some goals: (1) Lead one small feature end-to-end by Q2, (2) Mentor one junior engineer starting next month, (3) Propose at least one process improvement to the team, and (4) Present at two tech talks or share knowledge with the team quarterly. Does this feel achievable while still handling your core responsibilities?"
+        },
+        {
+          "role": "employee",
+          "text": "Yes, that sounds like the right level of challenge. I'm particularly excited about leading a feature - I think I'm ready for that responsibility."
+        },
+        {
+          "role": "manager",
+          "text": "Excellent. I'll pair you with [NAME] who led the search feature last quarter so you can shadow them. As for compensation, a 'Meets Expectations' rating typically comes with a standard merit increase and bonus. The exact numbers will come from HR, but I'd expect a 3-5% raise based on this year's guidelines. Any other questions before we wrap up?"
+        },
+        {
+          "role": "employee",
+          "text": "No, this gives me clear direction. Thank you for the specific goals - I'll start working on them right away."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1020,
+        "language": "en",
+        "tags": [
+          "meets_expectations",
+          "goals",
+          "mentorship"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_no_promotion_032",
+      "category": "performance_review",
+      "context": {
+        "role_level": "senior_manager",
+        "team_size": 10,
+        "topic": "exceeds expectations but no promotion path",
+        "participants": [
+          "manager",
+          "senior_engineer"
+        ],
+        "tenure": "4 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "I want to discuss your performance review. You've done excellent work this year - your rating is 'Exceeds Expectations.' You led the billing system migration successfully, you've been a go-to person for complex technical questions, and your mentorship of junior developers has been valuable. The team relies on you heavily."
+        },
+        {
+          "role": "employee",
+          "text": "Thank you for the recognition. I was hoping this would lead to a promotion to staff engineer. Can we discuss that?"
+        },
+        {
+          "role": "manager",
+          "text": "I want to be transparent with you: while your performance is strong, I don't think you're ready for a staff engineer promotion yet. Let me explain the gap. Staff engineers demonstrate company-wide impact beyond their immediate team - they influence technical direction across multiple teams, they lead large strategic initiatives, and they're recognized as experts outside the company. Your impact has been mostly within our team. You also haven't taken on the kind of ambiguous, high-stakes problems that staff engineers routinely solve."
+        },
+        {
+          "role": "employee",
+          "text": "That's disappointing to hear, but I appreciate the direct feedback. What would I need to do to bridge that gap?"
+        },
+        {
+          "role": "manager",
+          "text": "I'm glad you asked. Here's what I'd need to see: (1) Lead a cross-team initiative that involves coordinating with product, design, and other engineering teams, (2) Present at an industry conference or publish a technical blog post that demonstrates thought leadership, (3) Own a major technical area end-to-end - not just implementation but requirements, design, and long-term maintenance, and (4) Demonstrate the ability to influence technical strategy at the organizational level. This is about breadth of impact, not just depth of skill."
+        },
+        {
+          "role": "employee",
+          "text": "These are clear goals. How long do you think it would take to demonstrate these? I don't want to wait another year and still not be ready."
+        },
+        {
+          "role": "manager",
+          "text": "That's a fair concern. Let's check in quarterly. If you can demonstrate progress on these fronts within 6 months, we can reassess the promotion timeline. I'll also look for opportunities for you to take on broader responsibilities - maybe leading our next architecture review or representing the team in product planning meetings. The promotion path is open, but we need to see you operating at the next level consistently first. Does that make sense?"
+        },
+        {
+          "role": "employee",
+          "text": "Yes, that makes sense. I'd appreciate those opportunities to demonstrate broader impact. Can we have quarterly check-ins specifically about my promotion path?"
+        },
+        {
+          "role": "manager",
+          "text": "Absolutely. I'll put quarterly reviews on our calendar. In the meantime, keep doing the excellent work you're doing - the team values you, and I want to see you grow into a staff engineer role. You're on the right path, just not quite there yet. Any other questions?"
+        },
+        {
+          "role": "employee",
+          "text": "No, this gives me clarity. Thank you for being honest about the gaps and for working with me on a plan to close them."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1180,
+        "language": "en",
+        "tags": [
+          "promotion",
+          "expectations",
+          "growth_plan"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_compensation_only_033",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 6,
+        "topic": "discussing compensation without role change",
+        "participants": [
+          "manager",
+          "engineer"
+        ],
+        "tenure": "3 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "employee",
+          "text": "I'd like to discuss my compensation. I've been in the same role for 3 years now, and my responsibilities have grown significantly. I'm now leading the API team and handling architectural decisions that weren't part of my original role. I'd like a salary adjustment to reflect this."
+        },
+        {
+          "role": "manager",
+          "text": "Thank you for raising this directly. You're right that your role has evolved - you're now handling responsibilities that weren't originally part of your position. Let me share what I'm seeing: your technical leadership has improved significantly, you successfully onboarded two new team members, and you've become the go-to person for API-related questions across the organization. These are all valuable contributions that warrant compensation recognition."
+        },
+        {
+          "role": "employee",
+          "text": "I appreciate that recognition. What kind of adjustment are we talking about?"
+        },
+        {
+          "role": "manager",
+          "text": "I've done some research on market rates for your expanded responsibilities. Based on your current level of contribution, I'd propose reclassifying your position as 'Senior Engineer, Technical Lead' which comes with a 15% salary increase. Additionally, I can offer a one-time spot bonus of $5,000 to recognize the expanded duties you've taken on over the past year without us having adjusted your compensation."
+        },
+        {
+          "role": "employee",
+          "text": "A 15% increase would bring me closer to market. That feels reasonable. What's the timeline for this?"
+        },
+        {
+          "role": "manager",
+          "text": "The reclassification requires HR approval, which typically takes 3-4 weeks. The spot bonus I can process this month if you agree to the terms. I'll submit the reclassification paperwork this week, and I'll advocate strongly for it based on your demonstrated impact. I should have an answer by next month. In the meantime, let's document your expanded responsibilities to support the case."
+        },
+        {
+          "role": "employee",
+          "text": "That sounds fair. The spot bonus helps immediately, and the 15% increase would be meaningful. Is there anything else I should provide to support the reclassification?"
+        },
+        {
+          "role": "manager",
+          "text": "Yes, can you write up a list of your current responsibilities, especially those beyond your original job description? Include things like architectural decisions you've made, team members you've mentored, and cross-team projects you've contributed to. I'll attach this to the reclassification request to make a strong case."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 940,
+        "language": "en",
+        "tags": [
+          "compensation",
+          "reclassification",
+          "leadership"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_new_employee_first_034",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 7,
+        "topic": "new employee first review",
+        "participants": [
+          "manager",
+          "new_engineer"
+        ],
+        "tenure": "3 months",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "Congratulations on completing your first 3 months! I want to have a formal review of how you're settling in, recognize what's going well, and discuss any areas for adjustment. This is also a chance for you to share feedback on how we've supported your onboarding."
+        },
+        {
+          "role": "employee",
+          "text": "Thank you! I've really enjoyed my first 3 months. The team has been welcoming, and I feel like I'm finally getting into the rhythm of how things work here."
+        },
+        {
+          "role": "manager",
+          "text": "That's great to hear. Let me share what I've observed positively: You came up to speed on our tech stack quickly - you were productive on real work within your first month, which is impressive. You ask good questions and you're not afraid to ask for help, which is exactly the right approach for a new team member. Your code has been clean and well-tested. Colleagues have mentioned that you're easy to work with and collaborative. All of this puts you in a strong position for success here."
+        },
+        {
+          "role": "employee",
+          "text": "I appreciate that. I've tried hard to integrate well. Are there any areas where I should adjust my approach?"
+        },
+        {
+          "role": "manager",
+          "text": "A few things to work on: First, I'd like to see you be a bit more proactive in identifying work - don't always wait to be assigned tasks. Look at our backlog and pick things that need doing, or propose improvements based on what you observe. Second, while asking questions is good, try to spend a bit more time investigating independently before asking - see if you can find answers in documentation or existing code first. This builds your research skills and reduces dependency on others. Third, start participating more in our team discussions - don't be afraid to share your perspective even as a newer team member. Your voice is valuable."
+        },
+        {
+          "role": "employee",
+          "text": "These are helpful. I've been hesitant to grab work proactively because I didn't want to step on toes, but I see now that it's expected. For the investigation piece, I didn't want to waste time looking if someone could just tell me, but I understand that I learn better when I figure things out myself."
+        },
+        {
+          "role": "manager",
+          "text": "Exactly. As you grow more senior, there's no one to tell you what to do - you need to figure it out. This is good practice. How has the onboarding process been for you? Anything we could have done better?"
+        },
+        {
+          "role": "employee",
+          "text": "The buddy system was really helpful - having [NAME] to show me the ropes made a big difference. I wish there had been more documentation on our architecture and design patterns - I spent a lot of time just trying to understand how systems connect. Also, the first few weeks felt a bit overwhelming with all the meetings and context switching."
+        },
+        {
+          "role": "manager",
+          "text": "This is valuable feedback. I'll update our onboarding checklist to include architecture documentation and maybe create a system diagram for new hires. And you're right about the meetings - we overload new people with context when they're still trying to learn the basics. We should protect your calendar more in the first month. I'll make those changes. Looking forward, your goals for the next 3 months are: (1) Proactively pick up and complete at least 3 backlog items, (2) Lead a small feature or bug fix end-to-end, and (3) Present at one tech talk or share knowledge with the team. Let's meet monthly to check progress. How does that sound?"
+        },
+        {
+          "role": "employee",
+          "text": "That sounds like clear goals. I'm excited to take on more responsibility. Thank you for the detailed feedback - it helps me know what I'm doing right and where to grow."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1240,
+        "language": "en",
+        "tags": [
+          "new_employee",
+          "onboarding",
+          "first_review"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_satisfactory_stagnation_035",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 5,
+        "topic": "addressing performance stagnation",
+        "participants": [
+          "manager",
+          "engineer"
+        ],
+        "tenure": "5 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "I want to have a direct conversation about your performance. Your rating this year is 'Satisfactory' - you're meeting the basic requirements of your role, but I've noticed a pattern of stagnation over the past couple of years. Five years ago, you were one of our fastest-growing engineers, but recently you've been doing the bare minimum and not showing the growth I'd expect at your experience level."
+        },
+        {
+          "role": "employee",
+          "text": "I'm surprised to hear this. I thought I was doing fine - I complete my assigned work, I don't cause problems, and I'm always at my desk."
+        },
+        {
+          "role": "manager",
+          "text": "And those things are true - you're reliable and present. But at your experience level, 'meeting expectations' means more than just showing up and doing assigned work. It means growing your skills, taking on new challenges, mentoring others, and increasing your scope of impact. You haven't led a new initiative in two years. You haven't learned any new technologies or techniques. Your skills are staying flat while the industry advances. I'm concerned that if you don't reignite your growth, you'll eventually fall behind, and that puts both you and the team at risk."
+        },
+        {
+          "role": "employee",
+          "text": "That's hard to hear, and honestly, I've been feeling a bit bored. But I've also been dealing with some personal family matters that have drained my energy. I haven't known how to bring this up or how to ask for more interesting work."
+        },
+        {
+          "role": "manager",
+          "text": "Thank you for sharing that - I wish you'd told me sooner. Family matters absolutely affect your capacity, and I want to be supportive. At the same time, we need to find a sustainable path forward where you're engaged and growing. Can we talk about what would excite you? What kind of work would make you want to jump in each day?"
+        },
+        {
+          "role": "employee",
+          "text": "Honestly, I've always been interested in engineering management - helping teams work better together, solving people problems. But I haven't seen a path to that here, and I haven't wanted to presume I could do it."
+        },
+        {
+          "role": "manager",
+          "text": "That's actually really helpful to know. Management is definitely a possible path, and it sounds like your current role might not be leveraging your strengths. Here's what I propose: Let's do a 6-month trial where you take on some leadership responsibilities - leading a small project, facilitating some meetings, maybe mentoring a newer engineer. This will let you test whether management interests you while also helping the team. If it goes well, we can discuss a formal transition to a management track. If not, we'll find other ways to reignite your passion. Does this feel like a good direction?"
+        },
+        {
+          "role": "employee",
+          "text": "This feels like a lifeline. I've been stuck and didn't know how to ask for a change. The opportunity to try leadership responsibilities - even on a trial basis - really appeals to me. When can we start?"
+        },
+        {
+          "role": "manager",
+          "text": "Let's start next sprint. I'll assign you to lead the dashboard redesign project, which will give you experience coordinating across teams. I'll also pair you with me for 1:1s and leadership planning. I want you to succeed, and I'm willing to invest in your growth. Let's also talk about your family situation - HR has resources if you need support, and we can discuss flexible scheduling if that would help. You don't have to carry everything alone."
+        },
+        {
+          "role": "employee",
+          "text": "I appreciate that more than I can say. I've been afraid to bring up my family situation because I didn't want it to look like I wasn't committed. Knowing that I can get support while still growing my career makes a huge difference."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1180,
+        "language": "en",
+        "tags": [
+          "stagnation",
+          "growth",
+          "leadership_transition"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_compensation_denied_036",
+      "category": "performance_review",
+      "context": {
+        "role_level": "director",
+        "team_size": 15,
+        "topic": "compensation discussion with counteroffer declined",
+        "participants": [
+          "director",
+          "staff_engineer"
+        ],
+        "tenure": "6 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "employee",
+          "text": "I want to discuss my compensation. I've been here 6 years, I'm leading our most critical system, and I've trained 3 engineers who've all been promoted. I've researched and I'm 20% below market rate. I'd like an adjustment to bring me to market."
+        },
+        {
+          "role": "manager",
+          "text": "I appreciate you coming to me directly. Let me share some context about compensation decisions this year. Company-wide, merit increases are capped at 3% due to budget constraints. However, I do recognize your contributions and I've been advocating for you. Here's what I can offer: a 3% base increase, plus a $10,000 retention bonus, plus an accelerated equity grant that vests over 2 years instead of 4. This package brings your total compensation closer to market, even if the base isn't at the full 20% you're requesting."
+        },
+        {
+          "role": "employee",
+          "text": "I appreciate the effort, but the 3% base increase doesn't meaningfully address the 20% gap. The retention bonus and accelerated equity help, but they're one-time rather than recurring. I was hoping for at least a 15% base salary increase to bring me closer to market. Is there any flexibility?"
+        },
+        {
+          "role": "manager",
+          "text": "I understand your position. Let me be fully transparent: I have very limited flexibility on base salary increases due to company-wide caps. Exceptions require VP and HR approval, and they're only granted in exceptional circumstances - typically for counteroffers where someone has a competing offer. Is there something driving your urgency for this increase? Are you considering other opportunities?"
+        },
+        {
+          "role": "employee",
+          "text": "I've had preliminary conversations with a couple of companies, and their offers come in significantly higher. I'd prefer to stay here - I like the team and the work - but I also need to be compensated fairly for my level of contribution and responsibility."
+        },
+        {
+          "role": "manager",
+          "text": "Now we're in a different conversation. If you have competing offers, that changes the calculation. I can go back to leadership with a counteroffer request, and I'd have a good case given how critical your work is. But I want to be honest: I'd rather retain you because you're engaged and believe in our mission, not just because we match a salary. Money matters, but it's not the only factor. What would make you want to stay beyond compensation?"
+        },
+        {
+          "role": "employee",
+          "text": "That's a fair question. I'd want more autonomy in technical decisions - I feel constrained by some of our architectural choices. I'd also want a clearer growth path - I've been at staff level for 3 years without a clear next step. And I'd want more visibility with leadership - I feel disconnected from strategic decisions that affect my work."
+        },
+        {
+          "role": "manager",
+          "text": "This is really helpful feedback. Let me propose this: If you're willing to stay, I can advocate for a promotion to Principal Engineer within the next 6 months, which comes with a significant base salary increase. I can also give you more autonomy on architectural decisions for your system - you'd have final say on technical choices, with my support. And I'll include you in senior leadership planning meetings starting this month. In exchange, I'm asking for a 2-year commitment and a genuine investment in our shared success. This is about more than just your current salary - it's about your long-term growth and impact here. Does this appeal to you?"
+        },
+        {
+          "role": "employee",
+          "text": "This is exactly what I've been looking for. The promotion path, technical autonomy, and strategic visibility - these matter more to me than the salary differential. I'm willing to commit to 2 years if you're committed to these growth opportunities."
+        },
+        {
+          "role": "manager",
+          "text": "Excellent. I'll formalize this in a written agreement by next week. We'll document the promotion path, your scope of autonomy, and the leadership access. I'll also go back to HR about a special salary increase given this expanded scope and your commitment. Thank you for being direct about what you need - this helps me support you better."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1240,
+        "language": "en",
+        "tags": [
+          "compensation",
+          "counteroffer",
+          "retention"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_role_change_interest_037",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 8,
+        "topic": "expressing interest in role change",
+        "participants": [
+          "manager",
+          "senior_engineer"
+        ],
+        "tenure": "3 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "I want to discuss your performance and career development. Over the past year, you've delivered excellent work on your assigned tasks - your code quality is strong and you're reliable. But I've also noticed that your participation in team activities has declined, and in our one-on-ones, you've seemed less engaged than in previous years. What's going on?"
+        },
+        {
+          "role": "employee",
+          "text": "I appreciate you noticing. To be honest, I've been feeling uncertain about my career direction. I've been an individual contributor for 3 years, and while I'm good at it, I'm not sure it's what I want long-term. I've been exploring other paths - maybe management, maybe moving into a different domain. I think this uncertainty has shown up in my engagement level."
+        },
+        {
+          "role": "manager",
+          "text": "Thank you for being honest with me. It's completely normal to question your direction at this point in your career. And I'd rather help you figure it out than lose you because you're disengaged. Let me ask: what aspects of your current work energize you, and what drains you? This might help us understand your path."
+        },
+        {
+          "role": "employee",
+          "text": "What energizes me: solving complex technical problems, mentoring junior engineers, and cross-functional collaboration - working with product and design to figure out what to build. What drains me: being stuck in implementation details for long periods, maintaining legacy code, and working on the same types of features over and over. I think I want more variety and more human interaction."
+        },
+        {
+          "role": "manager",
+          "text": "This is incredibly helpful. What you're describing could point toward management, product management, or a more architectural role where you're working across teams rather than heads-down coding. Let me propose an experiment: for the next 2 months, let's adjust your role. I'd like you to spend 30% of your time on cross-functional work - working with product on requirements, participating in design reviews, and coordinating with other teams. Another 20% on mentoring - pair programming with junior engineers and leading some knowledge sharing sessions. The remaining 50% on your core engineering work. This will let you sample different types of work without fully committing to a path change. We'll reassess in 2 months to see what resonates."
+        },
+        {
+          "role": "employee",
+          "text": "That sounds like exactly what I need - a chance to explore without burning bridges. If I find that I love the cross-functional work, could we transition toward product management? Or if I love mentoring, could we move toward management?"
+        },
+        {
+          "role": "manager",
+          "text": "Yes to both. If product management calls to you, I can arrange a rotation with the product team. If management interests you, we can create a tech lead path with people responsibilities. I'm committed to helping you find a role that energizes you. Your contributions are valued, and I'd rather help you find your right place within the company than lose you because you're unhappy in your current role. Does this approach feel supportive?"
+        },
+        {
+          "role": "employee",
+          "text": "This feels incredibly supportive. I was afraid to say anything because I didn't want to seem ungrateful or like I wasn't doing my job. But you're making it safe to explore, and that means a lot."
+        },
+        {
+          "role": "manager",
+          "text": "I'm glad it feels supportive. Your job is not just to do work - it's to grow and find fulfillment. If I can help you find that here, that's a win for everyone. Let's document this experiment clearly - what you'll be doing, what success looks like, and how we'll measure it. And I want you to be honest with me about what's energizing and what's draining throughout. We'll figure this out together."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1120,
+        "language": "en",
+        "tags": [
+          "career_direction",
+          "role_change",
+          "experiment"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_late_career_review_038",
+      "category": "performance_review",
+      "context": {
+        "role_level": "director",
+        "team_size": 25,
+        "topic": "late career performance discussion",
+        "participants": [
+          "director",
+          "principal_engineer"
+        ],
+        "tenure": "15 years",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "I want to have an honest conversation about your performance and trajectory. You've been with the company for 15 years, and your institutional knowledge is invaluable. But I've also noticed that over the past couple of years, you've become resistant to new technologies and approaches. You dismiss new frameworks as 'fads' without really evaluating them, and in meetings, you often reference 'how we've always done it' rather than considering new ways. This concerns me because technology keeps evolving, and I need my principal engineers to evolve with it."
+        },
+        {
+          "role": "employee",
+          "text": "I understand your perspective. I've seen many technology cycles come and go, and I've developed strong opinions about what works and what doesn't. Maybe I am too dismissive of new approaches, but that comes from experience - I've seen things fail repeatedly. I worry that 'evolution' sometimes means abandoning proven solutions for trendy but unproven ones."
+        },
+        {
+          "role": "manager",
+          "text": "I respect your experience, and I don't want you to abandon proven solutions unnecessarily. But I also need you to stay curious. Some of these 'fads' become fundamental shifts - containerization, cloud-native architectures, machine learning - these aren't going away. When you dismiss them without investigation, you lose credibility with junior engineers who see your resistance as outdated rather than principled. I also notice that you rarely mentor or share your experience with the team - your wisdom is trapped in your head rather than being passed down. That's a lost opportunity."
+        },
+        {
+          "role": "employee",
+          "text": "That last point hits home. I haven't been great at mentorship, partly because I feel disconnected from the current generation of engineers. They approach problems differently than I do, and I haven't known how to bridge that gap. I think I've retreated into what I know rather than staying engaged."
+        },
+        {
+          "role": "manager",
+          "text": "This is self-aware, and I appreciate it. Here's what I'd like to see in the next year: First, choose one new technology and genuinely engage with it - learn it deeply enough that you can evaluate it fairly. You don't have to adopt it, but you should be able to discuss it knowledgeably. Second, start a mentorship program - maybe regular lunch-and-learns where you share your experience with the team. Turn your resistance into constructive guidance. Third, I'd like you to co-lead a major project with a more junior principal engineer - they bring knowledge of current technologies, you bring experience and wisdom. Collaboration rather than resistance."
+        },
+        {
+          "role": "employee",
+          "text": "These are reasonable expectations. The co-leadership idea particularly appeals to me - it would let me contribute while also learning from a different generation of engineers. What if I don't adapt as quickly as you'd like? I'm 15 years into my career - learning new things takes more effort than it used to."
+        },
+        {
+          "role": "manager",
+          "text": "That's fair, and I want to be realistic. Let's set expectations accordingly: I'm not asking you to become an expert in every new technology - I'm asking you to stay open-minded and curious. The co-leadership model will help - you won't be carrying the whole project alone. And I want to emphasize that your experience and wisdom are still valuable - the team needs your perspective, just not your resistance. I'd also be open to you moving into more of an advisor or architect role where your deep experience in our systems is the primary value rather than cutting-edge implementation. Let's discuss what that path would look like."
+        },
+        {
+          "role": "employee",
+          "text": "An advisor role could be interesting - I'd be the technical historian and system architect, focusing on long-term design decisions and mentorship rather than day-to-day implementation. That plays to my strengths better than competing with younger engineers on cutting-edge technologies."
+        },
+        {
+          "role": "manager",
+          "text": "I think that's a great direction. Let's develop a role evolution plan over the next quarter. We'll start with the co-leadership on one project and the lunch-and-learn mentorship series. If that goes well, we'll formalize a role change to Technical Advisor with adjusted responsibilities and compensation that reflects your value in a different way. How does that feel?"
+        },
+        {
+          "role": "employee",
+          "text": "This feels much better than trying to be something I'm not. I appreciate you working with me on an evolution rather than a revolution. I think I can add a lot of value in this space."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1280,
+        "language": "en",
+        "tags": [
+          "late_career",
+          "adaptability",
+          "role_evolution"
+        ]
+      }
+    },
+    {
+      "id": "perf_review_underperformance_promisepip_039",
+      "category": "performance_review",
+      "context": {
+        "role_level": "manager",
+        "team_size": 7,
+        "topic": "performance improvement plan discussion",
+        "participants": [
+          "manager",
+          "engineer"
+        ],
+        "tenure": "1 year",
+        "review_period": "2024"
+      },
+      "conversation": [
+        {
+          "role": "manager",
+          "text": "I need to have a difficult conversation about your performance over the past 6 months. We've discussed concerns informally several times, but I haven't seen sufficient improvement. Today's conversation will formalize those concerns and put you on a Performance Improvement Plan. This is serious - if we don't see sustained improvement, your employment here is at risk. Do you understand the gravity of this situation?"
+        },
+        {
+          "role": "employee",
+          "text": "Yes, I understand. I know I've been struggling. I want to improve, and I appreciate you giving me a clear path rather than just letting me go. Can you be specific about what's not meeting expectations?"
+        },
+        {
+          "role": "manager",
+          "text": "Let me list the specific issues: First, your code quality has been consistently below our standards - you've had 7 bugs make it to production in the past 6 months, well above average. Second, you've missed deadlines on 4 of the last 5 sprints, and often didn't communicate about delays until it was too late. Third, in team rituals like standup and retrospectives, you're frequently absent or disengaged - you don't share updates, you don't ask questions, and you don't participate in discussions. These gaps are affecting the team and our ability to deliver reliably."
+        },
+        {
+          "role": "employee",
+          "text": "I hear you, and I don't disagree with any of those points. I've been struggling with burnout and motivation, and that's shown up in my work. I want to do better. What does the improvement plan look like?"
+        },
+        {
+          "role": "manager",
+          "text": "Here's the 60-day plan: Week 1-2: You'll work with [NAME] from the team on every code review before submission - no code goes out without review. We'll do daily standup check-ins just you and me, where you'll share your work for the day and any blockers. Week 3-4: You'll pair program for 50% of your time with [NAME] to improve code quality practices. You'll also start leading standup once a week to rebuild engagement. Week 5-8: You'll lead a small feature end-to-end with support from the team. By the end of 60 days, we need to see: zero production bugs, all commitments met, and active participation in team rituals. We'll review progress weekly."
+        },
+        {
+          "role": "employee",
+          "text": "This is structured and clear. The pair programming especially helps - I know my code quality needs work. What happens if I don't meet these goals?"
+        },
+        {
+          "role": "manager",
+          "text": "I want to be transparent: If you don't meet the goals after 60 days, we'll need to discuss whether this role is the right fit for you. That could mean a different role on the team, or it could mean termination. But I'm not giving up on you - I want you to succeed, and this plan is designed to give you the support and structure you need. I'm investing time in your improvement, and I expect you to match that investment with effort and commitment. Can you give me that commitment?"
+        },
+        {
+          "role": "employee",
+          "text": "Yes, I can commit to this plan. I want to succeed here. The daily check-ins and pair programming will help me stay on track. I appreciate that you're not just letting me go without trying to help me improve."
+        },
+        {
+          "role": "manager",
+          "text": "Thank you for that commitment. Let's also acknowledge that burnout and motivation are real challenges - HR has resources if you need support. I also want to know: what do you need from me to be successful? What would help you re-engage and improve?"
+        },
+        {
+          "role": "employee",
+          "text": "I think clearer expectations would help - sometimes I'm not sure what success looks like. Also, more regular feedback would help - I've been working in a vacuum without knowing if I'm on track. And honestly, more interesting work would help - some of the maintenance tasks I've been given are demotivating."
+        },
+        {
+          "role": "manager",
+          "text": "These are fair points. I can provide clearer expectations and more frequent feedback - we'll do weekly reviews as part of the PIP. And I'll give you one feature of your own choosing, as long as it's within your capability range. Let's address both the boredom and the growth question. I'm committed to this - let me know what support you need, and I'll do my best to provide it."
+        }
+      ],
+      "metadata": {
+        "redacted": true,
+        "synthetic": true,
+        "source": "example_data",
+        "tokens": 1240,
+        "language": "en",
+        "tags": [
+          "pip",
+          "improvement_plan",
+          "underperformance"
+        ]
+      }
     }
   ]
 }
